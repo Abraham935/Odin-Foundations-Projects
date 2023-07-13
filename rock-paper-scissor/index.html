@@ -7,33 +7,36 @@
         <link rel="stylesheet" href="styles.css">
     </head>
 
-    <body>
-        <div class="title">
-            <h1>Rock, Papper and Scissors</h1>
-        </div>
-
-
-        <div class="results">
-            <div>
-                <p style="margin-bottom: -40px;">Player</p>
-                <p id="scorePlayer">0</p>
-
+    <body id="body">
+        <div>
+            <div class="title">
+                <h1>Rock, Papper and Scissors</h1>
             </div>
-            <div>
-                <p style="margin-bottom: -40px;">Computer</p>
-                <p id="scoreComputer">0</p>
+    
+    
+            <div class="results">
+                <div class="scores">
+                    <p style="margin-bottom: -40px">Player</p>
+                    <p id="scorePlayer">0</p>
+    
+                </div>
+                <div class="scores">
+                    <p style="margin-bottom: -40px">Computer</p>
+                    <p id="scoreComputer">0</p>
+                </div>
+    
             </div>
-
+    
+            <div class="options">
+                <button id="1" value="rock"><img src="/img/fist-svgrepo-com.svg"></button>
+                <button id="2" value="paper"><img src="/img/palm-svgrepo-com.svg"></button>
+                <button id="3" value="scissors"><img src="/img/peace-sign-svgrepo-com.svg"></button>
+            </div>
+    
+            <div class="message" id="messageDiv"></div>
+    
         </div>
-
-        <div class="options">
-            <button id="1" value="rock"><img src="/img/fist-svgrepo-com.svg"></button>
-            <button id="2" value="paper"><img src="/img/palm-svgrepo-com.svg"></button>
-            <button id="3" value="scissors"><img src="/img/peace-sign-svgrepo-com.svg"></button>
-        </div>
-
-        <div class="message" id="messageDiv"></div>
-
+        
     </body>
 
 </html>

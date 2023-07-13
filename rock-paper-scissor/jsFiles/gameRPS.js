@@ -5,6 +5,9 @@ let buttons = document.querySelectorAll('button');
 let scorePlayerHTML = document.getElementById("scorePlayer");
 let scoreComputerHTML = document.getElementById("scoreComputer");
 let messageHTML = document.getElementById("messageDiv");
+let bodyHTML = document.getElementById("body")
+
+console.log(bodyHTML);
 
 
 
@@ -26,10 +29,15 @@ function getComputerChoice (){
 
 function displayWinner(playerScore, computerScore){
     if(playerScore == 5){
-        console.log("Player Wins");
+        bodyHTML.innerHTML = `<div id="content">
+        <h1>! You Won !</h1>
+    </div>`;
+
     }
     else if(computerScore == 5){
-        console.log("Computer wom");
+        bodyHTML.innerHTML = `<div id="content">
+        <h1>! The Computer Won !</h1>
+    </div>`;
     }
 }
 
