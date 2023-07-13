@@ -1,3 +1,6 @@
+//Global constants
+const WINNING_SCORE = 5;
+
 //Global Variables
 let playerScore = 0;
 let computerScore = 0;
@@ -7,15 +10,10 @@ let scoreComputerHTML = document.getElementById("scoreComputer");
 let messageHTML = document.getElementById("messageDiv");
 let bodyHTML = document.getElementById("body")
 
-console.log(bodyHTML);
 
+//GAME FUNCTIONS
 
-
-console.log(scoreComputerHTML);
-console.log(scorePlayerHTML);
-
-
-//Functions for the game
+//Get computer choice
 function getComputerChoice (){
 
     let choices = ["rock", "paper", "scissors"];
@@ -27,50 +25,55 @@ function getComputerChoice (){
 
 }
 
+//Change window when a winner is choose
 function displayWinner(playerScore, computerScore){
     if(playerScore == 5){
         bodyHTML.innerHTML = `<div id="content">
         <h1>! You Won !</h1>
+        <button class="retry" onClick="window.location.reload();"> Play Again </button>
+       
     </div>`;
 
     }
     else if(computerScore == 5){
         bodyHTML.innerHTML = `<div id="content">
         <h1>! The Computer Won !</h1>
+        <button class="retry" onClick="window.location.reload();"> Play Again </button>
     </div>`;
     }
 }
 
+//function to display message of who won round
+function displayMessage(message) {
+    messageHTML.innerHTML = message;
+
+}
+
+//Main function of the page to play the game
 function playerTurn(playerSelection, computerSelection){
     console.log(playerSelection);
     console.log(computerSelection);
 
     if(playerSelection == computerSelection){
-        messageHTML.innerHTML = `Tie! Both players selection were ${playerSelection} and  ${computerSelection}`
+        displayMessage(`Tie! Both players selection were ${playerSelection} and  ${computerSelection}`);
     }
     else if ((playerSelection == "rock" && computerSelection == "scissors") || (playerSelection == "scissors" && computerSelection == "paper") || (playerSelection == "paper" && computerSelection == "rock")){
-        messageHTML.innerHTML = `You won! ${playerSelection} beats ${computerSelection}`
+        displayMessage(`You won! ${playerSelection} beats ${computerSelection}`);
         playerScore++;
-        scorePlayerHTML.innerHTML = playerScore
+        scorePlayerHTML.innerHTML = playerScore;
     
 
     } else {
-        messageHTML.innerHTML = `You lose! ${computerSelection} beats ${playerSelection}`
-        computerScore++
-        scoreComputerHTML.innerHTML = computerScore
+        displayMessage(`You lose! ${computerSelection} beats ${playerSelection}`);  
+        computerScore++;
+        scoreComputerHTML.innerHTML = computerScore;
     
 
     }
-
-
-    
-    console.log(playerScore);
-    console.log(computerScore)
-
     displayWinner(playerScore, computerScore);
 }
 
-// we use the .forEach method to iterate through each button
+//Loop that adds to each button functionality to play
 buttons.forEach((button) => {
 
     // and for each one we add a 'click' listener

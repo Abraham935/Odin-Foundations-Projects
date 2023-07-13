@@ -25,9 +25,19 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    min-height: 100vh;
+    background-color: lightgoldenrodyellow;
+    margin-top: 370px;
+ 
 }
 
+.retry {
+    margin-bottom: 15px;
+    margin-top: -10px;
+    font-size: 15px;
+    border-radius: 4px;
+    width: 100px;
+    height: 28px;
+}
 
 .options {
     display: flex;
@@ -37,7 +47,7 @@ body {
     
 }
 
-button {
+.options button {
     border-radius: 20px;
     border-width: 10px;
     border-color: black;
