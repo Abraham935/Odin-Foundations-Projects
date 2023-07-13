@@ -1,7 +1,18 @@
+//Global Variables
 let playerScore = 0;
 let computerScore = 0;
 let buttons = document.querySelectorAll('button');
+let scorePlayerHTML = document.getElementById("scorePlayer");
+let scoreComputerHTML = document.getElementById("scoreComputer");
+let messageHTML = document.getElementById("messageDiv");
 
+
+
+console.log(scoreComputerHTML);
+console.log(scorePlayerHTML);
+
+
+//Functions for the game
 function getComputerChoice (){
 
     let choices = ["rock", "paper", "scissors"];
@@ -27,35 +38,29 @@ function playerTurn(playerSelection, computerSelection){
     console.log(computerSelection);
 
     if(playerSelection == computerSelection){
-        console.log(`Tie! Both players selection were ${playerSelection} and  ${computerSelection}`)
+        messageHTML.innerHTML = `Tie! Both players selection were ${playerSelection} and  ${computerSelection}`
     }
     else if ((playerSelection == "rock" && computerSelection == "scissors") || (playerSelection == "scissors" && computerSelection == "paper") || (playerSelection == "paper" && computerSelection == "rock")){
-        console.log(`You won! ${playerSelection} beats ${computerSelection}`)
+        messageHTML.innerHTML = `You won! ${playerSelection} beats ${computerSelection}`
         playerScore++;
+        scorePlayerHTML.innerHTML = playerScore
     
 
     } else {
-        console.log(`You lose! ${computerSelection} beats ${playerSelection}`)
+        messageHTML.innerHTML = `You lose! ${computerSelection} beats ${playerSelection}`
         computerScore++
+        scoreComputerHTML.innerHTML = computerScore
+    
 
     }
+
+
     
     console.log(playerScore);
     console.log(computerScore)
 
     displayWinner(playerScore, computerScore);
 }
-
-/*for(let i = 0; i <= 5; i++ ){
-    let choiceComputer = getComputerChoice();
-
-    let choice = prompt("Enter your choice");
-
-    playerTurn(choice, choiceComputer);
-
-}*/
-
-
 
 // we use the .forEach method to iterate through each button
 buttons.forEach((button) => {
