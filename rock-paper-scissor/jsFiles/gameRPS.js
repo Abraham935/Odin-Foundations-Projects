@@ -26,11 +26,11 @@ function playerTurn(playerSelection, computerSelection){
     }
 }
 
-for(let i = 0; i <= 5; i++ ){
+/*for(let i = 0; i <= 5; i++ ){
     let choiceComputer = getComputerChoice();
 
     let choice = prompt("Enter your choice");
 
     playerTurn(choice, choiceComputer);
 
-}
+}*/
